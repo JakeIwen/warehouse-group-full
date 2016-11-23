@@ -1,0 +1,29 @@
+{
+  "name": "angular-routing",
+  "version": "1.0.0",
+  "description": "Make sure to run `npm install` to get Express. Angular and Bootstrap are included.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "jquery": "^3.1.1",
+    "pg": "^6.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdszafranski/sigma-angular-routing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kdszafranski/sigma-angular-routing/issues"
+  },
+  "homepage": "https://github.com/kdszafranski/sigma-angular-routing#readme"
+}
