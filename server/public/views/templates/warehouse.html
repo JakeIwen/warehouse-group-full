@@ -1,18 +1,31 @@
-<table class="table" ng-model="warehouse">
-  <thead>
-    <tr>
-      <th>Warehouse</th>
-      <th>Fulfillment Days</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="item in warehouse.data">
-        <td>
-          {{item.warehouse}}
-        </td>
-        <td>
-          {{item.fulfillment_days}}
-        </td>
-    </tr>
-  </tbody>
-</table>
+<section ng-model="warehouse">
+
+
+
+<!-- seachbar -->
+  <form id="search-form">
+    <div class="form-group">
+      <label for="title">Product</label>
+      <input class="form-control" ng-model="warehouse.searchText" ng-change="warehouse.searchReturn()" />
+    </div>
+  </form>
+  <!-- seacrhbar -->
+  <table class="table" >
+    <thead>
+      <tr>
+        <th>Warehouse</th>
+        <th>Fulfillment Days</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in warehouse.data">
+          <td>
+            {{item.warehouse}}
+          </td>
+          <td>
+            {{item.fulfillment_days}}
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

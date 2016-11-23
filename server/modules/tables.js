@@ -30,14 +30,13 @@ router.get('/:table', function(req, res) {
   });
 });
 
-
 router.get('/:table', function(req, res) {
-  console.log('get customers data');
+  console.log('get warehouse data');
   var table = req.params.table;
   console.log('table get:', table);
   pg.connect(connectionString, function(err, client, done) {
     if(err) {
-      console.log('connection error - get customers data: ', err);
+      console.log('connection error - get warehouse data: ', err);
       res.sendStatus(500);
     } else {
 
@@ -47,7 +46,7 @@ router.get('/:table', function(req, res) {
       // console.log('the client!:', client);
 
       if(err) {
-        console.log('select query error - get customers data ', err);
+        console.log('select query error - get warehouse data ', err);
         res.sendStatus(500);
       }
       res.send(result.rows);
@@ -56,5 +55,6 @@ router.get('/:table', function(req, res) {
   }
   });
 });
+
 
 module.exports = router;

@@ -39,13 +39,21 @@ app.controller('WarehouseController', ["$http", function($http) {
   console.log('warehouse controller running');
   var self = this;
   self.message = "Warehouse controller is the best!";
+  $http.get('/tables/warehouse')
+  .then(function(response) {
+    console.log(response.data);
+    self.data = response.data;
+  });
 
-     $http.get('/tables/warehouse')
-      .then(function(response) {
-        console.log(response.data);
-        self.data = response.data;
-      });
+  function searchReturn(product){
+    $http.get('/tables/search/' + product)
+    .then(function(response) {
+      console.log(response.data);
+      self.data = response.data;
+    });
 
+
+  }
 }]);
 // Orders Controller
 app.controller('OrdersController', function() {
@@ -67,3 +75,5 @@ app.controller('CustomersController', ["$http", function($http) {
    });
 
 }]);
+
+//warehouse search
