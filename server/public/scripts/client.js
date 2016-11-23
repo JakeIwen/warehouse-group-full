@@ -76,4 +76,17 @@ app.controller('CustomersController', ["$http", function($http) {
 
 }]);
 
-//warehouse search
+
+// Orders controller
+app.controller('OrdersController', ["$http", function($http) {
+  console.log('orders controller running');
+  var self = this;
+  self.message = "Orders controller is the best!";
+
+  $http.get('/tables/orders')
+   .then(function(response) {
+     console.log(response.data);
+     self.data = response.data;
+   });
+
+}]);
