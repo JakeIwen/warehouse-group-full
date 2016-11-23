@@ -38,22 +38,25 @@ app.controller('HomeController', function() {
 app.controller('WarehouseController', ["$http", function($http) {
   console.log('warehouse controller running');
   var self = this;
-  self.message = "Warehouse controller is the best!";
-  $http.get('/tables/warehouse')
-  .then(function(response) {
-    console.log(response.data);
-    self.data = response.data;
-  });
 
-  function searchReturn(product){
-    $http.get('/tables/search/' + product)
+  self.message = "Warehouse controller is the best!";
+  // $http.get('/tables/warehouse')
+  // .then(function(response) {
+  //   console.log(response.data);
+  //   self.data = response.data;
+  // });
+  self.searchText = '';
+  self.searchReturn = function(){
+    console.log('search return function');
+    $http.get('/tables/warehouse/' + self.searchText)
     .then(function(response) {
       console.log(response.data);
-      self.data = response.data;
+      self.data2 = response.data;
     });
 
 
   }
+  self.searchReturn();
 }]);
 // Orders Controller
 app.controller('OrdersController', function() {

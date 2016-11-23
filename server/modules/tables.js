@@ -35,6 +35,36 @@ router.get('/orders', function(req, res) {
   });
 });
 
+router.get('/warehouse/:product', function(req, res) {
+  var product = req.params.product;
+  console.log('get search data');
+  pg.connect(connectionString, function(err, client, done) {
+    if(err) {
+      console.log('connection error - get search data: ', err);
+      res.sendStatus(500);
+    } else {
+
+    client.query('SELECT warehouse, fulfillment_days ' +
+      'FROM warehouse ' +
+      'JOIN warehouse_product ON warehouse.id=warehouse_product.warehouse_id ' +
+      'JOIN products ON products.id=warehouse_product.product_id ' +
+      'WHERE products.description LIKE $1 AND warehouse_product.on_hand > 0;', ['%' + product + '%'],
+    function(err, result) {
+      done(); // close the connection.
+
+      console.log(result);
+
+      if(err) {
+        console.log('select query error - get orders data ', err);
+        res.sendStatus(500);
+      }
+      res.send(result.rows);
+
+    });
+  }
+  });
+});
+
 router.get('/:table', function(req, res) {
   console.log('get warehouse data');
   var table = req.params.table;

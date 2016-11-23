@@ -1,11 +1,8 @@
 <section ng-model="warehouse">
-
-
-
 <!-- seachbar -->
   <form id="search-form">
     <div class="form-group">
-      <label for="title">Product</label>
+      <label for="title">Product Search</label>
       <input class="form-control" ng-model="warehouse.searchText" ng-change="warehouse.searchReturn()" />
     </div>
   </form>
@@ -18,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="item in warehouse.data">
+      <tr ng-repeat="item in warehouse.data2">
           <td>
             {{item.warehouse}}
           </td>
