@@ -1,0 +1,8 @@
+"order_date","description","street","city","state","zip","address_type","first_name","last_name"
+"2010-03-05","toothbrush","1 Main St","Detroit","MI","31111","home","Lisa","Bonet"
+"2010-03-05","nail polish - blue","1 Main St","Detroit","MI","31111","home","Lisa","Bonet"
+"2012-02-08","generic beer can","555 Some Pl","Chicago","IL","60611","business","Lisa","Bonet"
+"2011-03-04","lysol","8900 Linova Ave","Minneapolis","MN","55444","home","Charles","Darwin"
+"2012-09-22","wet ones baby wipes","3 Charles Dr","Los Angeles","CA","00000","home","Lucy","Liu"
+"2012-09-23","cheetos","934 Superstar Ave","Portland","OR","99999","business","Lucy","Liu"
+"2013-05-25","cheetos","3 Charles Dr","Los Angeles","CA","00000","home","Lucy","Liu"
