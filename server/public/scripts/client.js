@@ -31,7 +31,7 @@ app.config(['$routeProvider', function($routeProvider) {
 app.controller('HomeController', function() {
   console.log('home controller running');
   var self = this;
-  self.message = "Home controller is the best!";
+  self.message = "Home controller is the bestest!";
 
 });
 // Warehouse controller
