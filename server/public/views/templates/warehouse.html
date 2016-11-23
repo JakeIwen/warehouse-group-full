@@ -1,1 +1,18 @@
-<h2>{{potato.message}}</h2>
+<table class="table" ng-model="warehouse">
+  <thead>
+    <tr>
+      <th>Warehouse</th>
+      <th>Fulfillment Days</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in warehouse.data">
+        <td>
+          {{item.warehouse}}
+        </td>
+        <td>
+          {{item.fulfillment_days}}
+        </td>
+    </tr>
+  </tbody>
+</table>

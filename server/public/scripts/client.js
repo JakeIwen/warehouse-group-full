@@ -31,27 +31,53 @@ app.config(['$routeProvider', function($routeProvider) {
 app.controller('HomeController', function() {
   console.log('home controller running');
   var self = this;
-  self.message = "Home controller is the best!";
+  self.message = "Home controller is the bestest!";
 
 });
 // Warehouse controller
-app.controller('WarehouseController', function() {
-  console.log('home controller running');
+app.controller('WarehouseController', ["$http", function($http) {
+  console.log('warehouse controller running');
   var self = this;
   self.message = "Warehouse controller is the best!";
 
-});
+     $http.get('/tables/warehouse')
+      .then(function(response) {
+        console.log(response.data);
+        self.data = response.data;
+      });
+
+}]);
 // Orders Controller
 app.controller('OrdersController', function() {
-  console.log('home controller running');
+  console.log('orders controller running');
   var self = this;
   self.message = "Orders controller is the best!";
 
 });
 // Customers controller
-app.controller('CustomersController', function() {
-  console.log('warehouse controller running');
+app.controller('CustomersController', ["$http", function($http) {
+  console.log('customers controller running');
   var self = this;
   self.message = "Customers controller is the best!";
 
-});
+  $http.get('/tables/customers')
+   .then(function(response) {
+     console.log(response.data);
+     self.data = response.data;
+   });
+
+}]);
+
+// Orders controller
+app.controller('OrdersController', ["$http", function($http) {
+  console.log('orders controller running');
+  var self = this;
+  self.message = "Orders controller is the best!";
+
+  $http.get('/tables/orders')
+   .then(function(response) {
+     console.log(response.data);
+     self.data = response.data;
+   });
+
+}]);
