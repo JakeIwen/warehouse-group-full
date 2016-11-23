@@ -1,1 +1,18 @@
-<h2></h2>
+<table class="table" ng-model="customers">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in customers.data">
+        <td>
+          {{item.first_name}}
+        </td>
+        <td>
+          {{item.last_name}}
+        </td>
+    </tr>
+  </tbody>
+</table>

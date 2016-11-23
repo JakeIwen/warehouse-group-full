@@ -55,9 +55,15 @@ app.controller('OrdersController', function() {
 
 });
 // Customers controller
-app.controller('CustomersController', function() {
+app.controller('CustomersController', ["$http", function($http) {
   console.log('customers controller running');
   var self = this;
   self.message = "Customers controller is the best!";
 
-});
+  $http.get('/tables/customers')
+   .then(function(response) {
+     console.log(response.data);
+     self.data = response.data;
+   });
+
+}]);
